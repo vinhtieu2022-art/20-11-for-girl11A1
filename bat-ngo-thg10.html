@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Món quà nhỏ ngày 20/10 💗</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+<style>
+  :root{--pink:#ff6f9f;--rose:#ffb4c8;--cream:#fff8f5;--ink:#6d3850;--purple:#a78bfa}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100vh;font-family:"Segoe UI",system-ui,sans-serif;color:var(--ink);background:linear-gradient(135deg,#fff4f7 0%,#ffe2eb 48%,#f5e8ff 100%);overflow-x:hidden}
+  .glow{position:fixed;width:280px;height:280px;border-radius:50%;filter:blur(55px);opacity:.42;pointer-events:none;z-index:0;background:#ff9fbd;top:-80px;left:-70px}
+  .glow.two{background:#c4a7ff;top:auto;left:auto;right:-90px;bottom:-80px}
+  .heart{position:fixed;bottom:-40px;z-index:0;pointer-events:none;animation:floatUp linear forwards;opacity:.75}
+  @keyframes floatUp{to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+  main{position:relative;z-index:1;width:min(900px,92%);margin:0 auto;padding:34px 0 48px;text-align:center}
+  .tag{display:inline-block;padding:8px 15px;border:1px solid #ffc3d4;background:#ffffffa6;border-radius:999px;font-size:.88rem;letter-spacing:.04em}
+  h1{font-size:clamp(2.4rem,7vw,5rem);line-height:1.04;margin:22px 0 12px;color:#e84f87;letter-spacing:-.04em}
+  h1 span{display:block;color:#9b73d7}
+  .subtitle{max-width:620px;margin:0 auto 25px;font-size:1.08rem;line-height:1.75;color:#80566b}
+  .stage{margin:26px auto 22px;max-width:600px;min-height:310px;display:grid;place-items:center;perspective:1100px}
+  .envelope-wrap{cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:17px;transition:transform .25s;outline:none}
+  .envelope-wrap:hover{transform:translateY(-4px)}
+  .envelope-wrap:focus-visible{outline:3px solid #d78aff;outline-offset:8px;border-radius:15px}
+  .envelope{width:250px;height:170px;position:relative;isolation:isolate;filter:drop-shadow(0 18px 18px #b85a7b28);transition:opacity .55s,transform .7s}
+  .env-back{position:absolute;inset:0;background:#f7a0b9;border-radius:8px;z-index:0}
+  .letter{position:absolute;left:15px;right:15px;bottom:8px;height:140px;background:linear-gradient(145deg,#fffdfd,#fff0f5);border:1px solid #ffe0e9;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;box-shadow:0 3px 12px #b85a7b16;z-index:1;transform:translateY(0);transition:transform .95s cubic-bezier(.2,.75,.25,1),box-shadow .6s}
+  .letter-icon{font-size:2rem}
+  .letter-label{font-family:Georgia,serif;font-size:1rem;color:#ce5480;font-style:italic}
+  .env-front{position:absolute;inset:0;border-radius:8px;overflow:hidden;z-index:3;pointer-events:none}
+  .env-front:before{content:"";position:absolute;inset:0;background:#ffb5c9;clip-path:polygon(0 0,50% 57%,100% 0)}
+  .env-front:after{content:"";position:absolute;inset:0;background:#ff83a8;clip-path:polygon(0 0,50% 57%,0 100%)}
+  .env-right{position:absolute;inset:0;background:#ff9ab6;clip-path:polygon(100% 0,100% 100%,50% 57%);z-index:4;pointer-events:none;border-radius:8px}
+  .env-bottom{position:absolute;inset:0;background:#ff8eae;clip-path:polygon(0 100%,50% 52%,100% 100%);z-index:5;pointer-events:none}
+  .env-flap{position:absolute;left:0;top:0;width:100%;height:100%;background:#ffc4d4;clip-path:polygon(0 0,100% 0,50% 59%);transform-origin:top center;transform:rotateX(0deg);transition:transform .7s cubic-bezier(.2,.7,.2,1);z-index:6;backface-visibility:visible}
+  .seal{position:absolute;z-index:7;left:50%;top:56%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:#e85f91;color:white;display:grid;place-items:center;font-size:17px;box-shadow:0 3px 8px #b94b753d;transition:opacity .25s,transform .35s}
+  .envelope.open .env-flap{transform:rotateX(180deg);z-index:0}
+  .envelope.open .seal{opacity:0;transform:translate(-50%,-50%) scale(.4)}
+  .envelope.open .letter{transform:translateY(-100px);box-shadow:0 10px 24px #b85a7b20;transition-delay:.12s}
+  .envelope.leaving{opacity:0;transform:translateY(28px) scale(.94);pointer-events:none}
+  .tap{font-weight:700;color:#d94f83;transition:opacity .25s}
+  .envelope-wrap.opened .tap{opacity:0}
+  .message{display:none;background:#ffffffc9;border:1px solid #fff;border-radius:26px;padding:clamp(22px,5vw,40px);box-shadow:0 18px 55px #b66c9630;max-width:700px;margin:0 auto;animation:pop .6s ease both}
+  .message.show{display:block}
+  @keyframes pop{from{opacity:0;transform:translateY(15px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+  .message h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 15px;color:#df5288}
+  .message p{font-size:1.05rem;line-height:1.85;margin:12px 0}
+  .signature{font-weight:800;color:#9b73d7;margin-top:22px!important}
+  button{border:0;border-radius:999px;padding:13px 22px;font:inherit;font-weight:750;cursor:pointer;transition:transform .2s,box-shadow .2s}
+  button:hover{transform:translateY(-2px);box-shadow:0 9px 22px #db68933b}
+  .primary{background:linear-gradient(110deg,#ff6f9f,#d78aff);color:white}
+  .secondary{background:#fff;color:#d94f83;border:1px solid #ffc5d7}
+  .compliments{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}
+  .tile{padding:19px 12px;background:#ffffffa8;border:1px solid #fff;border-radius:19px;line-height:1.55}
+  .tile .emoji{font-size:1.8rem;display:block;margin-bottom:7px}
+  .tile strong{display:block;color:#d94f83;margin-bottom:5px}
+  .bottom{font-size:.9rem;opacity:.8;margin-top:28px}
+  .actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:22px}
+  @media(max-width:600px){.compliments{grid-template-columns:1fr}.tile{padding:15px}.stage{min-height:250px}.envelope{transform:scale(.9)}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+  .alex-brush-regular {
+  font-family: "Alex Brush", cursive;
+  font-weight: 1000;
+  font-style: normal;
+  width:60%;
+}
+
+</style>
+</head>
+<body>
+<div class="glow"></div><div class="glow two"></div>
+<main>
+  <div class="tag">🌷 20 THÁNG 10 · NGÀY PHỤ NỮ VIỆT NAM 🌷</div>
+  <div class="alex-brush-regular" style="display:flex;text-align:center;justify-content:center;margin:0 auto;width:100%;font-size:2.4rem"><span>Mừng ngày 20/10</span>
+  <h1 >Gửi những cô gái <span>tuyệt vời 💗</span></h1></div>
+  <p class="subtitle">Có một món quà nho nhỏ dành cho các bạn. Không cần phải làm gì đặc biệt đâu — Hôm nay, hãy bớt lo nghĩ lại, ăn ngon ngủ kỹ và lúc nào cũng cười tươi như hoa nhé!</p>
+
+  <section class="stage" id="stage">
+    <div class="envelope-wrap" id="openEnvelope" role="button" tabindex="0" aria-label="Mở lá thư bất ngờ">
+      <div class="envelope" id="envelope">
+        <div class="env-back"></div>
+        <div class="letter"><span class="letter-icon">💌</span><span class="letter-label">Một lời nhắn dành cho bạn</span></div>
+        <div class="env-front"></div><div class="env-right"></div><div class="env-bottom"></div>
+        <div class="env-flap"></div><div class="seal">♥</div>
+      </div>
+      <div class="tap">Cấm từ chối! Bấm vào đây để nhận quà nhanh lên!</div>
+    </div>
+  </section>
+
+  <section class="message" id="message" aria-live="polite">
+    <div style="font-size:2.2rem">💐 💖 🌸</div>
+    <h2>Gửi 'nóc nhà' tương lai của lớp</h2>
+    <p>Chúc các chị em bớt cơn buồn ngủ mỗi tiết đầu giờ chiều và điểm số cứ gọi là đỉnh nóc kịch trần nhé!</p>
+    <p>Mong rằng mỗi ngày đến lớp đều có tiếng cười, có những người bạn tốt, có thật nhiều kỷ niệm đẹp và có đủ can đảm để theo đuổi điều mình yêu thích.</p>
+    <p>Cảm ơn các bạn vì đã làm cho tập thể lớp trở nên vui vẻ, ấm áp và đáng nhớ hơn. Hãy luôn là chính mình — theo cách riêng rực rỡ nhất nhé! 🌷</p>
+    <p class="signature">Chúc các bạn có một ngày 20/10 thật hạnh phúc! 💗</p>
+    <div class="actions">
+      <button class="primary" id="confettiBtn">Mở ra xem có quà gì bất ngờ không!</button>
+      <button class="secondary" id="againBtn">Đọc lại lời chúc 💌</button>
+    </div>
+  </section>
+
+  <section class="compliments" aria-label="Những lời nhắn dễ thương">
+    <div class="tile"><span class="emoji">📚</span><strong>Điểm cao chót vót</strong>Mong các cậu mùa kiểm tra tới toàn gặp tủ trúng phóc, điểm 9 điểm 10 rơi trúng đầu.</div>
+    <div class="tile"><span class="emoji">💖</span><strong>Luôn vui vẻ rạng rỡ</strong>Cứ cười nhiều vào, vì con trai lớp mình thích ngắm lúc các cậu cười nhất (đỡ cằn nhằn hơn)</div>
+    <div class="tile"><span class="emoji">🧋</span><strong>Trà sữa dài dài</strong>Cầu cho tuần nào cũng có đứa tự giác gom tiền đãi trà sữa, uống hoài không sợ béo.</div>
+  </section>
+  <button class="secondary" id="wishBtn">💝 Gửi một lời chúc nữa</button>
+  <p class="bottom">Được tạo bằng một chút yêu thương · 20/10 💗</p>
+</main>
+<script>
+const opener=document.getElementById('openEnvelope');
+const envelope=document.getElementById('envelope');
+const message=document.getElementById('message');
+let letterOpened = false;
+function openLetter(){
+  if(letterOpened) return;
+  letterOpened = true;
+  opener.classList.add('opened');
+  envelope.classList.add('open');
+  // Give the flap time to open and the letter to slide out, then fade the whole envelope away.
+  setTimeout(()=>{
+    envelope.classList.add('leaving');
+    setTimeout(()=>{
+      document.getElementById('stage').style.display='none';
+      message.classList.add('show');
+      message.scrollIntoView({behavior:'smooth',block:'center'});
+      burst(22);
+    },480);
+  },850);
+}
+opener.addEventListener('click',openLetter);
+opener.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLetter()}});
+document.getElementById('againBtn').addEventListener('click',()=>{
+  message.classList.remove('show');
+  envelope.classList.remove('open','leaving');
+  opener.classList.remove('opened');
+  letterOpened=false;
+  document.getElementById('stage').style.display='grid';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+document.getElementById('confettiBtn').addEventListener('click',()=>burst(45));
+document.getElementById('wishBtn').addEventListener('click',()=>{
+ const wishes=['Chúc cậu hôm nay nhận được thật nhiều quà và chẳng phải suy nghĩ gì đau đầu nha!','Mong hôm nay bạn cười thật nhiều nhé 💖','Chúc mọi ước mơ nhỏ đều có ngày thành hiện thực ✨','Cảm ơn vì đã là một phần đáng yêu của lớp 🫶','Chúc bạn luôn tự tin, bình an và rực rỡ theo cách riêng 🌸','Hôm nay là ngày của các bạn, cứ tận hưởng trọn vẹn đi nhé! 🌸'];
+ const old=document.getElementById('extraWish');if(old)old.remove();
+ const p=document.createElement('p');p.id='extraWish';p.style.cssText='font-weight:800;color:#9b73d7;font-size:1.08rem;margin:18px auto;max-width:520px';
+ p.textContent=wishes[Math.floor(Math.random()*wishes.length)];
+ document.getElementById('wishBtn').before(p);burst(12);
+});
+function burst(count){
+ const symbols=['💗','💐','💖','💕','🌸','✨','🌷','💝'];
+ for(let i=0;i<count;i++){
+  const el=document.createElement('span');el.className='heart';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  el.style.left=Math.random()*100+'vw';el.style.fontSize=(15+Math.random()*20)+'px';
+  el.style.animationDuration=(3+Math.random()*3)+'s';el.style.animationDelay=(Math.random()*.6)+'s';
+  document.body.appendChild(el);setTimeout(()=>el.remove(),7000);
+ }
+}
+setInterval(()=>{if(Math.random()>.35)burst(1)},1700);
+</script>
+</body>
+</html>

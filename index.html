@@ -52,7 +52,8 @@
   button:hover{transform:translateY(-2px);box-shadow:0 9px 22px #db68933b}
   .primary{background:linear-gradient(110deg,#ff6f9f,#d78aff);color:white}
   .secondary{background:#fff;color:#d94f83;border:1px solid #ffc5d7}
-  .compliments{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}
+  .compliments{display:none;grid-template-columns:repeat(3,1fr);gap:12px;margin:30px 0}
+  .compliments.show{display:grid}
   .tile{padding:19px 12px;background:#ffffffa8;border:1px solid #fff;border-radius:19px;line-height:1.55}
   .tile .emoji{font-size:1.8rem;display:block;margin-bottom:7px}
   .tile strong{display:block;color:#d94f83;margin-bottom:5px}
@@ -74,7 +75,7 @@
 <main>
   <div class="tag">🌷 20 THÁNG 10 · NGÀY PHỤ NỮ VIỆT NAM 🌷</div>
   <div class="alex-brush-regular" style="display:flex;text-align:center;justify-content:center;margin:0 auto;width:100%;font-size:2.4rem"><span>Mừng ngày 20/10</span>
-  <h1 >Gửi những cô gái <span>tuyệt vời 💗</span></h1></div>
+  <h1 >Gửi những cô gái <span>tuyệt vời 11A1 💗</span></h1></div>
   <p class="subtitle">Có một món quà nho nhỏ dành cho các bạn. Không cần phải làm gì đặc biệt đâu — Hôm nay, hãy bớt lo nghĩ lại, ăn ngon ngủ kỹ và lúc nào cũng cười tươi như hoa nhé!</p>
 
   <section class="stage" id="stage">
@@ -94,7 +95,7 @@
     <h2>Gửi 'nóc nhà' tương lai của lớp</h2>
     <p>Chúc các chị em bớt cơn buồn ngủ mỗi tiết đầu giờ chiều và điểm số cứ gọi là đỉnh nóc kịch trần nhé!</p>
     <p>Mong rằng mỗi ngày đến lớp đều có tiếng cười, có những người bạn tốt, có thật nhiều kỷ niệm đẹp và có đủ can đảm để theo đuổi điều mình yêu thích.</p>
-    <p>Cảm ơn các bạn vì đã làm cho tập thể lớp trở nên vui vẻ, ấm áp và đáng nhớ hơn. Hãy luôn là chính mình — theo cách riêng rực rỡ nhất nhé! 🌷</p>
+    <p>Cảm ơn các bạn vì đã làm cho tập thể lớp trở nên vui vẻ, ấm áp và đáng nhớ hơn. Hãy luôn là chính mình theo cách riêng rực rỡ nhất nhé! 🌷</p>
     <p class="signature">Chúc các bạn có một ngày 20/10 thật hạnh phúc! 💗</p>
     <div class="actions">
       <button class="primary" id="confettiBtn">Mở ra xem có quà gì bất ngờ không!</button>
@@ -108,7 +109,6 @@
     <div class="tile"><span class="emoji">🧋</span><strong>Trà sữa dài dài</strong>Cầu cho tuần nào cũng có đứa tự giác gom tiền đãi trà sữa, uống hoài không sợ béo.</div>
   </section>
   <button class="secondary" id="wishBtn">💝 Gửi một lời chúc nữa</button>
-  <p class="bottom">Được tạo bằng một chút yêu thương · 20/10 💗</p>
 </main>
 <script>
 const opener=document.getElementById('openEnvelope');
@@ -126,6 +126,7 @@ function openLetter(){
     setTimeout(()=>{
       document.getElementById('stage').style.display='none';
       message.classList.add('show');
+      document.querySelector('.compliments').classList.add('show');
       message.scrollIntoView({behavior:'smooth',block:'center'});
       burst(22);
     },480);
